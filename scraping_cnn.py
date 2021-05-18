@@ -2,6 +2,10 @@
 import requests 
 from bs4 import BeautifulSoup
 import pprint
+import sqlite3
+from sqlite3 import Error
+
+
 
 res = requests.get('https://dubai.dubizzle.com/search/?keywords=cars&is_basic_search_widget=1&is_search=1')
 soup = BeautifulSoup(res.text, 'html.parser')
@@ -14,3 +18,4 @@ for line in head_lines:
     
 print(clean_head_list)
 
+# Create Databse Connection
